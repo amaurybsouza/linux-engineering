@@ -1,3 +1,24 @@
+# Topic 200: Capacity Planning
+
+Description: Candidates should be able to measure hardware resource and network bandwidth, identify and troubleshoot resource problems.
+
+The following is a partial list of the used files, terms and utilities:
+
+```bash
+iostat
+netstat
+w
+top
+sar
+processes blocked on I/O
+blocks out
+vmstat
+pstree, ps
+Isof
+uptime
+swap
+blocks in
+```
 
 - comando padrão do linux ao invés do ifconfig -> ip address show
 - vamos instalar dois pacotes que são usados nesta aula.
