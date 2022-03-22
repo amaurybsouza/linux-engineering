@@ -138,10 +138,10 @@ Média:         all      6,08      0,00      4,28      0,50      0,00     89,14
 
 - opções do comando sar:
 
-`$sar -u` (dados de todas as CPU do sistema)
-`$sar -f` sa10 (mostra os dados do dia 10/05, histórico desse dia)
-`$sar -r` (mostra dados de memória do sistema) ** parecido com o comando free 
-`$sar -S` (mostra dados de swap do sistema) 
+a) `$sar -u` (dados de todas as CPU do sistema)
+b) `$sar -f` sa10 (mostra os dados do dia 10/05, histórico desse dia)
+c) `$sar -r` (mostra dados de memória do sistema) ** parecido com o comando free 
+d) `$sar -S` (mostra dados de swap do sistema) 
 
 
 
