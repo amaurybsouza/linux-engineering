@@ -102,39 +102,30 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 `vmstat -p /dev/sda8` (mostra os dados de uma partição especifica)
 
 
+3) `$mpstat` (mostra informações sobre CPU, mais detalhado que no comando `$iostat`)
+
+ `$mpstat 2 3` (mostra a cada 2 segundos por 3 vezes as informações)
 
 
+4) `sar` (mostra o histórico de uso dos recursos de hardware do sistema)
 
+- Em sistemas Debian preciso ativar a flag para que o comando `$sar` seja ativado.
 
-#mpstat (mostra informações sobre CPU, mais detalhado que no comando iostat)
+` $vim /etc/default/sysstat`
 
+- existe um arquivo que `/etc/cron.d/` que faz essa coleta dos dados, de nome sysstat.
 
-- mpstat 2 3 (mostra a cada 2 segundos por 3 vezes as informações)
-
-
-#sar (mostra o histórico de uso dos recursos de hardware do sistema)
-
-- Em sistemas Debian preciso ativar a flag para que o comando sar seja ativado.
-
-# vim /etc/default/sysstat
-
-# systemctl status sysstat.service 
-● sysstat.service - Resets System Activity Data Collector
-     Loaded: loaded (/lib/systemd/system/sysstat.service; enabled; vendor preset: enabled)
-     Active: active (exited) since Thu 2020-05-28 07:59:47 -03; 1h 41min ago
-       Docs: man:sa1(8)
-             man:sadc(8)
-             man:sar(1)
-    Process: 770 ExecStart=/usr/lib/sysstat/debian-sa1 --boot (code=exited, status=0/SUCCESS)
-   Main PID: 770 (code=exited, status=0/SUCCESS)
-
-mai 28 07:59:47 dell-inspiron systemd[1]: Starting Resets System Activity Data Collector...
-mai 28 07:59:47 dell-inspiron systemd[1]: Finished Resets System Activity Data Collector.
-
-- existe um arquivo que /etc/cron.d/ que faz essa coleta dos dados, de nome sysstat.
-
-$ whatis sadc
+```bash
+$whatis sadc
 sadc (8)             - System activity data collector.
+```
+
+
+
+
+
+
+
 
 - onde ele salva os dados coletados:
 
