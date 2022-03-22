@@ -1,6 +1,6 @@
 # Topic 200: Capacity Planning
 
-Description: Candidates should be able to measure hardware resource and network bandwidth, identify and troubleshoot resource problems.
+**Description**: Candidates should be able to measure hardware resource and network bandwidth, identify and troubleshoot resource problems.
 
 The following is a partial list of the used files, terms and utilities:
 
@@ -35,49 +35,34 @@ $ whatis iostat
 iostat (1)           - Report Central Processing Unit (CPU) statistics and input/output statistics for devices and partitions.
 ```
 
-- sempre ver o man, whatis para ajudar com os comandos do Linux.
+Principais opções do comando iostat:
 
-
-
-
--> Principais opções do comando iostat:
-
-#iostat 
-
-Linux 5.4.0-31-generic (dell-inspiron) 	27/05/2020 	_x86_64_	(4 CPU)
+```bash
+$ iostat
+Linux 3.10.0-1160.59.1.el7.x86_64 (k8smaster)   02-03-2022      _x86_64_        (2 CPU)
 
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-          36,26    0,15   11,83    0,04    0,00   51,72
+           5,77    0,00    3,99    0,53    0,00   89,70
 
-Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
-loop0             0,00         0,02         0,00         0,00       1090          0          0
-loop1             0,10         0,12         0,00         0,00       6029          0          0
-loop10            0,00         0,02         0,00         0,00       1071          0          0
-loop11            0,00         0,02         0,00         0,00       1079          0          0
-loop12            0,00         0,00         0,00         0,00          1          0          0
-loop2             0,00         0,01         0,00         0,00        344          0          0
-loop3             0,02         0,03         0,00         0,00       1478          0          0
-loop4             0,09         0,10         0,00         0,00       4745          0          0
-loop5             0,00         0,02         0,00         0,00       1083          0          0
-loop6             0,20         0,20         0,00         0,00       9811          0          0
-loop7             0,00         0,01         0,00         0,00        341          0          0
-loop8             0,00         0,01         0,00         0,00        404          0          0
-loop9             1,44         1,46         0,00         0,00      70714          0          0
-sda              12,70        61,87       224,82         0,00    3005109   10919609          0
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda              10,39        48,35        31,85    1153631     759869
+dm-0             10,37        47,00        32,38    1121492     772632
+dm-1              0,00         0,09         0,00       2072          0
+```
 
-- entendendo as opções desse comando: (observar esses dados em problemas de performance do sistema)
+Entendendo as opções desse comando: (observar esses dados em problemas de performance do sistema)
 
-1) %user (é o tempo de CPU de programas a nivel de usuário, root, meu usuário)
+a) `%user` (é o tempo de CPU de programas a nivel de usuário, root, meu usuário)
 
-2) %nice (aplicações a nivel de usuário que foi definido alguma prioridade especifica)
+b) `%nice` (aplicações a nivel de usuário que foi definido alguma prioridade especifica)
 
-3) %system (uso de CPU pelo kernel, praticamente o kernel)
+c) `%system` (uso de CPU pelo kernel, praticamente o kernel)
 
-4) %iowait (quanto tempo a CPU ficou esperando algum procedimento de entrada, escrita em disco)
+d) `%iowait` (quanto tempo a CPU ficou esperando algum procedimento de entrada, escrita em disco)
    - por exemplo, isso é relevante se você ver que o disco está lento, lento para ler ou escrever algum setor do disco
    - ou alguma aplicaçao tendo dificuldade em escrver algo no disco, isso causa tempo de CPU elevando, %iowait
 
-5) %steal (usado em máquina virtuais, CPU virtual, quanto tempo a CPU da maquina virtual esperou a CPU da maquina
+e) `%steal` (usado em máquina virtuais, CPU virtual, quanto tempo a CPU da maquina virtual esperou a CPU da maquina
 real disponibilzar recurso para ela).
 
 6) %idle (tempo que a CPPU ficou em estado idle)
