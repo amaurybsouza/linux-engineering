@@ -86,18 +86,25 @@ f) `%idle` (tempo que a CPPU ficou em estado idle)
 
 2) `$vmstat` (alternativa ao comando iostat, mostra informações sobre processos, memória, paginação, blocos de IO)
 
-# vmstat 
-procs -----------memória--------- ---swap-- ----e/s---- -sistema- ------cpu-----
- r  b   swpd  livre   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 5  0      0 1340280 493688 6325104    0    0    35   124  400  133 35 12 53  0  0
+```bash
+$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 127072   1708 847744    0    0    26    18  845  426  6  4 90  1  0
+```
 
 - informações importante desse comando:
 
-r (o que está na fila do processamento dos processadores)
-b (estado de bloqueio, blocked, sleep)
+`r` (o que está na fila do processamento dos processadores)
+`b` (estado de bloqueio, blocked, sleep)
 
-- vmstat -d (dispositivos da máquina)
-- vmstat -p /dev/sda8 (mostra os dados de uma partição especifica)
+`vmstat -d` (dispositivos da máquina)
+`vmstat -p /dev/sda8` (mostra os dados de uma partição especifica)
+
+
+
+
+
 
 #mpstat (mostra informações sobre CPU, mais detalhado que no comando iostat)
 
