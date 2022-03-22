@@ -111,7 +111,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 
 - Em sistemas Debian preciso ativar a flag para que o comando `$sar` seja ativado.
 
-` $vim /etc/default/sysstat`
+` $vim /etc/default/sysstat` (ativar para sistemas Red Hat)
 
 - existe um arquivo que `/etc/cron.d/` que faz essa coleta dos dados, de nome sysstat.
 
@@ -120,23 +120,36 @@ $whatis sadc
 sadc (8)             - System activity data collector.
 ```
 
+```bash
+$ sar
+Linux 3.10.0-1160.59.1.el7.x86_64 (k8smaster)   02-03-2022      _x86_64_        (2 CPU)
 
-
-
-
-
-
+21:40:01        CPU     %user     %nice   %system   %iowait    %steal     %idle
+21:50:01        all      6,23      0,00      4,42      0,52      0,00     88,83
+22:00:01        all      6,05      0,00      4,28      0,49      0,00     89,18
+22:10:01        all      6,17      0,00      4,31      0,51      0,00     89,01
+22:20:01        all      5,86      0,00      4,11      0,48      0,00     89,55
+Média:         all      6,08      0,00      4,28      0,50      0,00     89,14
+```
 
 - onde ele salva os dados coletados:
 
-$ /var/log/sysstat
+`$/var/log/sysstat`
 
 - opções do comando sar:
 
-$ sar -u (dados de todas as CPU do sistema)
-$ sar -f sa10 (mostra os dados do dia 10/05, histórico desse dia)
-$ sar -r (mostra dados de memória do sistema) ** parecido com o comando free 
-$ sar -S (mostra dados de swap do sistema) 
+`$sar -u` (dados de todas as CPU do sistema)
+`$sar -f` sa10 (mostra os dados do dia 10/05, histórico desse dia)
+`$sar -r` (mostra dados de memória do sistema) ** parecido com o comando free 
+`$sar -S` (mostra dados de swap do sistema) 
+
+
+
+
+
+
+
+
 
 swap free, swap usada
 $ sar -n DEV (mostra dados referentes a interface de redes)
@@ -328,60 +341,5 @@ $ htop -d 1000 (equivale a 100 segundos)
 # cat /proc/swaps 
 Filename				Type		Size	Used	Priority
 /swapfile                               file		2097148	0	-2
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-processes blocked on I/O
-
-
-blocks out
-
-
-
-pstree, ps
-
-
-
-
-blocks in
-
-
-
-
 
 
