@@ -20,20 +20,20 @@ swap
 blocks in
 ```
 
-- comando padrão do linux ao invés do ifconfig -> ip address show
+Iniciando aqui vamos ver primeiro os requisitos que serao necessarios:
+
 - vamos instalar dois pacotes que são usados nesta aula.
 
-
+```bash
 $ yum install net-tools syssatat -y
+```
 
+1) `iostat` (mostra um relatório de uso de CPU e de IO dos dispositivos de armazenamento, de CPU)
 
-# VAMOS COMEÇAR PELOS COMANDOS INICIAIS:
-
-
-#iostat (mostra um relatório de uso de CPU e de IO dos dispositivos de armazenamento, de CPU)
-
-# whatis iostat 
+```bash
+$ whatis iostat 
 iostat (1)           - Report Central Processing Unit (CPU) statistics and input/output statistics for devices and partitions.
+```
 
 - sempre ver o man, whatis para ajudar com os comandos do Linux.
 
