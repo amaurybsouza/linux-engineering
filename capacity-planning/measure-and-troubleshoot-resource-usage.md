@@ -65,27 +65,26 @@ d) `%iowait` (quanto tempo a CPU ficou esperando algum procedimento de entrada, 
 e) `%steal` (usado em máquina virtuais, CPU virtual, quanto tempo a CPU da maquina virtual esperou a CPU da maquina
 real disponibilzar recurso para ela).
 
-6) %idle (tempo que a CPPU ficou em estado idle)
+f) `%idle` (tempo que a CPPU ficou em estado idle)
 
 - outro dado importante desse comando, são os devices (dispositivos de armazenamento da máquina)
 
-tps (transações em segundos, média)
+`tps` (transações em segundos, média)
 
-7) opções do comando iostat:
+1.1) Opções do comando `iostat`:
 
-- $iostat -m (mostra os dados em megas)
-- $iostat -h (mostra os dados mais humanos, mais legivel)
-- iostat -c (mostra só os dados de CPU)
-- iostat -d (mostra só os devices)
-- iostat -p (mostra as partições)
-
-- iostat -c 2 (gera um relatório a cada dois segundos)
-- iostat -d 2 (gera um relatório a cada dois segundos)
-- iostat -c 2 5 (relatório a cada 2 segundos e em 5 vezes)
+`$iostat -m` (mostra os dados em megas)
+`$iostat -h` (mostra os dados mais humanos, mais legivel)
+`iostat -c` (mostra só os dados de CPU)
+`iostat -d` (mostra só os devices)
+`iostat -p` (mostra as partições)
+`iostat -c 2` (gera um relatório a cada dois segundos)
+`iostat -d 2` (gera um relatório a cada dois segundos)
+`iostat -c 2 5` (relatório a cada 2 segundos e em 5 vezes)
  
 
 
-#vmstat (alternativa ao comando iostat, mostra informações sobre processos, memória, paginação, blocos de IO)
+2) `$vmstat` (alternativa ao comando iostat, mostra informações sobre processos, memória, paginação, blocos de IO)
 
 # vmstat 
 procs -----------memória--------- ---swap-- ----e/s---- -sistema- ------cpu-----
